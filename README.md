@@ -1,2 +1,2 @@
 # lwIP
-CMSIS Pack fork of the lwIP = lightweight TCP/IP stack
+CMSIS Pack for the lwIP - A Lightweight TCP/IP stack
