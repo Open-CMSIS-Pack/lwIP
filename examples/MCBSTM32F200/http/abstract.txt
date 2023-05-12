@@ -1,0 +1,11 @@
+HTTP Server lwIP Demo with Raw API for Keil MCBSTM32F200 Development Board.
+
+The HTTP Server example is available for multiple targets:
+
+MCBSTM32F200 V1.1:
+    Standalone application for MCBSTM32F200 V1.1 board using
+    ST802RT1 Ethernet PHY.
+
+MCBSTM32F200 V1.2:
+    Standalone application for MCBSTM32F200 V1.2 board using
+    KSZ8081RNA Ethernet PHY.
