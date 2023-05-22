@@ -1,0 +1,36 @@
+name: Build pack
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  release:
+    types: [published]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  pack:
+    name: Generate pack
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          submodules: true
+
+      - name: Fetch tags
+        if: github.event_name == 'release'
+        run: |
+          git fetch --tags --force
+      # If you encounter problems with the following action, please check the docmentation at:
+      #  https://github.com/Open-CMSIS-Pack/gen-pack-action
+      - uses: Open-CMSIS-Pack/gen-pack-action@main
+        with:
+          doxygen-version: 1.8.13
+          packchk-version: 1.3.95
+          gen-pack-script: ./gen_pack.sh --no-preprocess
+          gen-pack-output: ./output
