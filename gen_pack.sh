@@ -29,7 +29,6 @@ PACK_BUILD=./build
 # Default: empty (all folders)
 #
 PACK_DIRS="
-contrib
 examples
 lwip
 ports
@@ -51,8 +50,6 @@ PACK_DELETE_FILES="
 .gitmodules
 gen_pack.sh
 README.md
-contrib/.git
-contrib/.gitignore
 lwip/.git
 lwip/.gitattributes
 lwip/.gitignore
