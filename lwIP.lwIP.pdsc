@@ -54,6 +54,12 @@
       <require Cbundle="lwIP" Cclass="Network" Cgroup="CORE"/>
       <require Cbundle="lwIP" Cclass="Network" Cgroup="Driver" Csub="SIO"/>
     </condition>
+    <condition id="Network Core with Driver SIO and RTOS">
+      <description>Network Core with Serial I/O Driver and RTOS</description>
+      <require Cbundle="lwIP" Cclass="Network" Cgroup="CORE"/>
+      <require Cbundle="lwIP" Cclass="Network" Cgroup="Driver" Csub="SIO"/>
+      <require Cbundle="lwIP" Cclass="Network" Cgroup="RTOS"/>
+    </condition>
     <condition id="Network with CMSIS-RTOS2">
       <description>Network with CMSIS-RTOS2 OS abstraction</description>
       <require Cbundle="lwIP" Cclass="Network" Cgroup="CORE"/>
@@ -277,7 +283,7 @@
           <file category="source"  name="lwip/src/netif/ethernet.c"/>
         </files>
       </component>
-      <component Cgroup="Interface" Csub="PPP" condition="Network Core with Driver SIO">
+      <component Cgroup="Interface" Csub="PPP" condition="Network Core with Driver SIO and RTOS">
         <description>Network PPP over Serial Interface</description>
         <RTE_Components_h>
           <!-- the following content goes into file 'RTE_Components.h' -->
