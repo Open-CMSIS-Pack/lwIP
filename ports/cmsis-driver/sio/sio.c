@@ -308,7 +308,7 @@ u32_t sio_tryread(sio_fd_t fd, u8_t *data, u32_t len)
  *
  * @note This function will block until all data can be sent.
  */
-u32_t sio_write(sio_fd_t fd, u8_t *data, u32_t len)
+u32_t sio_write(sio_fd_t fd, const u8_t *data, u32_t len)
 {
   sio_status_t *sio;
   uint32_t n,wi;

@@ -29,54 +29,9 @@
  * Author: Adam Dunkels <adam@sics.se>
  *
  */
-#ifndef LWIP_ARCH_CC_H
-#define LWIP_ARCH_CC_H
+#ifndef LWIP_ARCH_SYS_ARCH_H
+#define LWIP_ARCH_SYS_ARCH_H
 
-#include <stdio.h>
-#include <stdlib.h>
+typedef unsigned int sys_prot_t;
 
-#if defined (__CC_ARM ) || \
-   (defined (__ARMCC_VERSION) && (__ARMCC_VERSION >= 6010050))
-#include <errno.h>
-#undef  EDOM
-#undef  ERANGE
-#undef  EILSEQ
-#undef  ESIGNUM
-#undef  EINVAL
-#undef  ENOMEM
-#define LWIP_PROVIDE_ERRNO
-#else
-#define LWIP_PROVIDE_ERRNO
-#endif
-
-/* Define platform endianness (might already be defined) */
-#ifndef BYTE_ORDER
-#define BYTE_ORDER LITTLE_ENDIAN
-#endif /* BYTE_ORDER */
-
-/* Define (sn)printf formatters for these lwIP types */
-#define X8_F  "02x"
-#define U16_F "hu"
-#define S16_F "hd"
-#define X16_F "hx"
-#define U32_F "lu"
-#define S32_F "ld"
-#define X32_F "lx"
-#define SZT_F "lu"
-
-/* Compiler hints for packing structures */
-#if defined(__ICCARM__)
-#define PACK_STRUCT_STRUCT __packed
-#else
-#define PACK_STRUCT_STRUCT __attribute__((packed))
-#endif
-
-/* Platform specific diagnostic output */
-#define LWIP_PLATFORM_DIAG(x) do {printf x;} while(0)
-
-#define LWIP_PLATFORM_ASSERT(x) do {printf("Assertion \"%s\" failed at line %d in %s\n", \
-                                     x, __LINE__, __FILE__); fflush(NULL); abort();} while(0)
-
-#define LWIP_RAND() ((u32_t)rand())
-
-#endif /* LWIP_ARCH_CC_H */
+#endif /* LWIP_ARCH_SYS_ARCH_H */
