@@ -7,6 +7,12 @@
   <url>https://www.keil.com/pack/</url>
   <repository type="git">https://github.com/Open-CMSIS-Pack/lwIP.git</repository>
   <license>LICENSE</license>
+  <licenseSets>
+    <licenseSet id="all" default="true" gating="true">
+      <license title="BSD License for lwIP"            name="LICENSE" spdx="BSD-3-Clause"/>
+      <license title="Apache 2.0 for CMSIS extensions" name="LICENSE" spdx="Apache-2.0"/>
+    </licenseSet>
+  </licenseSets>
   <releases>
     <release version="2.3.0">
       Release of lwIP in a PACK containing lwIP Version 2.2.0.
