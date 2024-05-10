@@ -14,7 +14,7 @@
     </licenseSet>
   </licenseSets>
   <releases>
-    <release version="2.3.0">
+    <release version="2.3.0" date="2024-05-10">
       Release of lwIP in a PACK containing lwIP Version 2.2.0.
       Added csolution based example for NXP EVKB-IMXRT1050 Board
       Removed obsolete examples
